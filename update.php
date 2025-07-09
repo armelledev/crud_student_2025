@@ -1,5 +1,38 @@
 <?php
 include "database.php";
+
+if(isset($_GET['id_student'])){
+$id= $_GET['id_student']; 
+
+$sql= "SELECT * FROM students WHERE id_student=?";
+
+$querry=$pdoconnect->prepare($sql);
+$querry->execute($id);
+$person= $querry->fetch(PDO::FETCH_ASSOC);
+
+if($_SERVER['REQUEST_METHOD'] === 'POST');{
+
+ $nom = trim ($_POST['nom_student'] ?? '');
+    $email = trim($_POST['email_student'] ?? '');
+    $password = trim($_POST['password_student'] ?? '');
+
+  $sql="UPDATE students SET nom_student=?, email_student=?, password_student=? WHERE id=?"
+
+  $query=$pdoconnect->prepare($sql);
+  $query->execute($nom , $email ,$password ,$id);
+  
+  header('location: index.php');
+  exit();
+
+  'nom_student' => $nom ;
+  'email_student' => $email;
+  'password_student' => $password;
+
+
+}
+    
+}
+
 ?>
 
 

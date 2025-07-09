@@ -9,7 +9,6 @@ $search =isset($_GET['search']) ? $_GET['search'] : '' ;
 // requet sql avec filtre de recherche
 $sql = 'SELECT * FROM students';
 
-
 if(!empty($_GET['search'])){
     $sql .=' WHERE nom_student LIKE :search OR  email_student LIKE :search' ;
 }
