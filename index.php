@@ -83,7 +83,7 @@ $students =$query->fetchAll(PDO::FETCH_ASSOC);
                      <td>
                     
                         <div class="action-buttons">
-                            <a href="">
+                            <a href="update.php?id_student=<?= $student['id_student'] ;?>">
                                 <button class="btn btn-edit">
                                     <svg width="14" height="14"
                                         <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>

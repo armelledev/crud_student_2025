@@ -40,7 +40,7 @@ if(empty($email)){
         if($student){
            $error['email_student']= "l'email existe deja"; 
         }
-
+    }
  //validation du password
 
 
@@ -72,7 +72,7 @@ if(empty($error)){
     exit();
     
 }
-}
+
 }
 ?>
 
